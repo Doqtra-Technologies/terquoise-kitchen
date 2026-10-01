@@ -27,7 +27,7 @@ export default function Header() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="bg-ink text-center font-display text-[0.7rem] tracking-[0.2em] text-white/90 uppercase">
         <p className="px-4 py-2">
-          Lunch · 2 courses £17.50 <span className="mx-2 text-teal">✦</span> Dinner · 3 courses £29.50
+          Lunch · 2 courses £17.50 <span className="mx-2 text-teal">|</span> Dinner · 3 courses £29.50
         </p>
       </div>
       <div

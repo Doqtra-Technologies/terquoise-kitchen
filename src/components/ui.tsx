@@ -83,7 +83,16 @@ export function PageHero({ eyebrow, title, image }: { eyebrow: string; title: st
   );
 }
 
-export function Marquee({ items, className = "" }: { items: string[]; className?: string }) {
+export function Marquee({
+  items,
+  className = "",
+  monoMark = false,
+}: {
+  items: string[];
+  className?: string;
+  /** Render the flame separator in solid white (for coloured backgrounds). */
+  monoMark?: boolean;
+}) {
   const row = [...items, ...items];
   return (
     <div className={`overflow-hidden whitespace-nowrap ${className}`} aria-hidden="true">
@@ -93,7 +102,12 @@ export function Marquee({ items, className = "" }: { items: string[]; className?
             {row.map((t, i) => (
               <span key={i} className="mx-6 inline-flex items-center gap-12 font-display uppercase">
                 {t}
-                <span className="text-teal">✦</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/flame.png"
+                  alt=""
+                  className={`h-[0.9em] w-auto ${monoMark ? "brightness-0 invert" : ""}`}
+                />
               </span>
             ))}
           </span>

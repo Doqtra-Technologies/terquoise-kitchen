@@ -56,6 +56,7 @@ export default function Home() {
         <Marquee
           items={["Authentic Turkish", "Mediterranean", "Charcoal grilled", "Fresh mezes", "Made to share"]}
           className="text-xl tracking-[0.12em]"
+          monoMark
         />
       </div>
 
