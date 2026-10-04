@@ -631,7 +631,7 @@ export const drinksMenu: PricedMenu = {
       title: "Champagne & Sparkling Wines",
       items: [
         multi(
-          "Prosecco DOC Treviso Brut",
+          "Prosecco DOC Treviso Brut Ltynera",
           [
             { label: "125ml", price: "£7.20" },
             { label: "Bottle", price: "£31.50" },
@@ -733,5 +733,5 @@ export const drinksMenu: PricedMenu = {
       ],
     },
   ],
-  serviceNote: "All prices include VAT at the current rate. All prices are subject to change without prior notice.",
+  serviceNote: "All prices are subject to change without prior notice.",
 };
