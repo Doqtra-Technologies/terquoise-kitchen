@@ -19,7 +19,7 @@ const pillars = [
   {
     title: "Colourful mezes",
     text: "Houmous, babaganush, cacik, sigara borek and more - small plates designed for the middle of the table.",
-    photo: photos.starters,
+    photo: photos.mezePlates,
   },
   {
     title: "House specialities",
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </Reveal>
         <Reveal delay={150} className="lg:col-span-5">
           <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem]">
-            <Image src={photos.storefront.src} alt={photos.storefront.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+            <Image src={photos.cutletsWarm.src} alt={photos.cutletsWarm.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
           </div>
         </Reveal>
       </section>

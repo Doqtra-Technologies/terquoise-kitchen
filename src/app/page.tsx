@@ -244,7 +244,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button href={mapsLinkUrl}>Read Google reviews</Button>
-            <Button href={mapsLinkUrl} variant="light">
+            <Button href={site.reviewUrl} variant="light">
               Leave a review
             </Button>
           </div>

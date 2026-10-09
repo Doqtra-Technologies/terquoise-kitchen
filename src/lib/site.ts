@@ -30,6 +30,9 @@ export const site = {
       "https://www.ubereats.com/gb/store/turquoise-kitchen/9ig0mop3TlGfB3vRC39JxQ",
   },
 
+  // Google Business Profile "write a review" short link.
+  reviewUrl: "https://g.page/r/CWH7BJJEgD7bEBM/review",
+
   // Drop an MP4 into /public/videos and set the path here to replace the hero slideshow.
   heroVideo: null as string | null,
 };
@@ -40,7 +43,9 @@ export const mapsQuery = encodeURIComponent(
   `Turquoise Kitchen, ${site.address.street}, ${site.address.town}`,
 );
 export const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&z=16&output=embed`;
-export const mapsLinkUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+// Directions to the restaurant's Google Maps listing (place id + coordinates).
+export const mapsLinkUrl =
+  "https://www.google.com/maps/dir//Turquoise+Kitchen,+22+Wood+St,+Stratford-upon-Avon/data=!4m8!4m7!1m0!1m5!1m1!1s0x4870ce33067df443:0xdb3e80449204fb61!2m2!1d-1.7089446!2d52.1926594";
 
 export const nav = [
   { href: "/menu", label: "Menu" },
@@ -81,6 +86,11 @@ export const photos = {
   cocktail: p(19, "Strawberry cocktail", 1360, 932),
   cocktailTray: p(20, "A tray of colourful cocktails", 1360, 904),
   cocktailsServed: p(21, "Cocktails being served", 1360, 881),
+  mezePlates: p(22, "Plates of traditional mezes ready to serve", 1086, 1448),
+  doner: p(23, "Grilled lamb on bread with yoghurt and charred tomatoes", 1086, 1448),
+  hotMeze: p(24, "Hot meze platter with falafel, sucuk and calamari", 1360, 872),
+  prawns: p(25, "Tiger prawns in garlic and tomato sauce", 765, 1020),
+  bulgurSalad: p(26, "Bulgur salad with fresh mint and herbs", 765, 1020),
 };
 
 export const gallery: Photo[] = Object.values(photos);
