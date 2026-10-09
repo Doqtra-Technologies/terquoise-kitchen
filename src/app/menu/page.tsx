@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { Button, Eyebrow, PageHero } from "@/components/ui";
-import { allergyNote, menus, tagLabels, type Dish, type Tag } from "@/lib/menu";
+import { aLaCarte, allergyNote, drinksMenu, setMenus, tagLabels, type Dish, type PricedMenu, type SetMenu, type Tag } from "@/lib/menu";
 import { photos } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "À la carte, lunch and dinner set menus and drinks at Turquoise Kitchen: mezes, charcoal grills, chef's specials, wines and cocktails.",
+    "Lunch and dinner set menus, à la carte and drinks at Turquoise Kitchen: mezes, charcoal grills, chef's specials, steaks, seafood, wines and cocktails.",
 };
+
+const menus: (SetMenu | PricedMenu)[] = [...setMenus, aLaCarte, drinksMenu];
 
 const tagStyle: Record<Tag, { short: string; cls: string }> = {
   v: { short: "V", cls: "bg-emerald-600/10 text-emerald-700" },
   vg: { short: "VG", cls: "bg-emerald-600/15 text-emerald-800" },
   spicy: { short: "Spicy", cls: "bg-red-600/10 text-red-700" },
-  gluten: { short: "GF", cls: "bg-amber-600/15 text-amber-800" },
+  gluten: { short: "Gluten", cls: "bg-amber-600/15 text-amber-800" },
+  gf: { short: "GF", cls: "bg-sky-600/10 text-sky-800" },
   nuts: { short: "Nuts", cls: "bg-bronze/15 text-bronze" },
 };
 
@@ -36,19 +39,18 @@ function DishRow({ dish }: { dish: Dish }) {
           {dish.note && <span className="font-serif text-base text-ink/55 normal-case italic">({dish.note})</span>}
           {dish.tags?.map((t) => <TagBadge key={t} tag={t} />)}
         </h4>
-        {dish.price && <span className="shrink-0 font-display text-lg text-teal-deep">{dish.price}</span>}
+        {dish.price && <span className="font-display text-lg text-teal-deep">{dish.price}</span>}
       </div>
+      {dish.desc && <p className="mt-1 text-[0.95rem] leading-relaxed text-ink/65">{dish.desc}</p>}
       {dish.prices && (
-        <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
-          {dish.prices.map((p) => (
-            <span key={p.label} className="whitespace-nowrap">
-              <span className="font-sans text-xs tracking-wide text-ink/50 uppercase">{p.label}</span>{" "}
-              <span className="font-display text-lg text-teal-deep">{p.price}</span>
+        <p className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
+          {dish.prices.map((pr) => (
+            <span key={pr.label} className="font-display text-teal-deep">
+              <span className="text-sm tracking-wide text-ink/50 uppercase">{pr.label}</span> {pr.price}
             </span>
           ))}
         </p>
       )}
-      {dish.desc && <p className="mt-1 text-[0.95rem] leading-relaxed text-ink/65">{dish.desc}</p>}
     </li>
   );
 }
@@ -62,7 +64,7 @@ export default function MenuPage() {
         <div className="mx-auto flex max-w-7xl gap-8 overflow-x-auto px-4 sm:px-6 lg:px-8">
           {menus.map((m) => (
             <a key={m.slug} href={`#${m.slug}`} className="shrink-0 py-4 font-display tracking-[0.16em] uppercase hover:text-teal">
-              {m.name} {m.price && <span className="text-teal">{m.price}</span>}
+              {m.name} {"price" in m && <span className="text-teal">{m.price}</span>}
             </a>
           ))}
         </div>
@@ -73,11 +75,11 @@ export default function MenuPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <Reveal className="flex flex-col items-start justify-between gap-8 border-b-2 border-ink pb-10 md:flex-row md:items-end">
               <div>
-                <Eyebrow>{menu.served}</Eyebrow>
+                <Eyebrow>{"served" in menu ? menu.served : menu.eyebrow}</Eyebrow>
                 <h2 className="mt-2 font-display text-5xl font-semibold uppercase sm:text-6xl">{menu.name}</h2>
-                {menu.price && <p className="mt-2 text-ink/60">Except special calendar dates</p>}
+                {"price" in menu && <p className="mt-2 text-ink/60">Except special calendar dates</p>}
               </div>
-              {menu.price && (
+              {"price" in menu && (
                 <div className="flex items-center gap-4">
                   <span className="font-display text-2xl tracking-wide uppercase">{menu.courses}</span>
                   <span className="rounded-2xl border-2 border-bronze px-5 py-2 font-display text-4xl text-ink">{menu.price}</span>
@@ -87,21 +89,21 @@ export default function MenuPage() {
 
             {menu.sections.map((section) => (
               <Reveal key={section.title} className="mt-14">
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                   <h3 className="font-display text-4xl font-semibold text-navy uppercase">{section.title}</h3>
                   {section.subtitle && <span className="font-serif text-lg text-bronze italic">{section.subtitle}</span>}
-                  <span className="h-px flex-1 bg-bronze/40" />
+                  <span className="hidden h-px flex-1 bg-bronze/40 sm:block" />
                 </div>
+                {section.note && <p className="mt-2 text-sm text-ink/55">{section.note}</p>}
                 <ul className="mt-4 gap-x-14 md:columns-2">
-                  {section.items.map((dish, i) => (
-                    <DishRow key={`${dish.name}-${i}`} dish={dish} />
+                  {section.items.map((dish) => (
+                    <DishRow key={`${dish.name}-${dish.note ?? ""}`} dish={dish} />
                   ))}
                 </ul>
-                {section.footnote && <p className="mt-4 text-sm text-ink/55 italic">{section.footnote}</p>}
               </Reveal>
             ))}
 
-            {menu.extras && (
+            {"extras" in menu && menu.extras && (
               <Reveal className="mt-10 rounded-2xl border border-ink/10 bg-white/60 p-6">
                 <div className="flex items-baseline justify-between">
                   <h4 className="font-display text-lg tracking-wide uppercase">{menu.extras.title}</h4>
