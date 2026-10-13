@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: site.name,
     description: site.description,
-    images: ["/images/gallery-14.webp"],
+    images: ["/images/gallery-19.webp"],
     locale: "en_GB",
     type: "website",
   },

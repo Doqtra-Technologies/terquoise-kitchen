@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function OrderPage() {
   return (
     <>
-      <PageHero eyebrow="Delivery & collection" title="Order Online" image={photos.mezeSpread.src} />
+      <PageHero eyebrow="Delivery & collection" title="Order Online" image={photos.hotMeze.src} />
       <section className="bg-sand py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">

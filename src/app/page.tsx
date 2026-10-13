@@ -9,19 +9,19 @@ import { setMenus } from "@/lib/menu";
 import { mapsLinkUrl, photos, site } from "@/lib/site";
 
 const signatures = [
-  { photo: photos.mixedShish, name: "Mixed Shish", desc: "Chicken and Adana kebab grilled over charcoal." },
+  { photo: photos.adana, name: "Adana", desc: "Spicy minced lamb kebab grilled over charcoal." },
   { photo: photos.seaBass, name: "Sea Bass Fillet", desc: "Pan fried, with chunky chips and side salad." },
-  { photo: photos.lamb, name: "Mixed Grill", desc: "Lamb, chicken and Adana straight off the coals." },
-  { photo: photos.topkapi, name: "Chicken Topkapi", desc: "Stuffed with rice, pine nuts and currants." },
+  { photo: photos.lambShish, name: "Lamb Shish", desc: "Char-grilled lean, tender lamb skewers." },
+  { photo: photos.kofteChips, name: "Kofte", desc: "Minced lamb and beef kofte grilled over charcoal." },
 ];
 
 const instagramGrid = [
-  photos.cocktailTray,
-  photos.kavurma,
-  photos.interiorBooth,
-  photos.breadMeze,
-  photos.casserole,
-  photos.cocktail,
+  photos.wineEvening,
+  photos.houmous,
+  photos.interiorSettings,
+  photos.baklava,
+  photos.copperCloche,
+  photos.cheesecake,
 ];
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
       {/* 1. Banner */}
       <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink">
         <HeroSlideshow
-          slides={[photos.tableSpread, photos.mixedGrill, photos.interiorBlue, photos.mezeSpread]}
+          slides={[photos.tableSpread, photos.charcoalGrill, photos.interiorTables, photos.hotMeze]}
           video={site.heroVideo}
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/70 via-ink/45 to-ink/80" />
@@ -64,7 +64,7 @@ export default function Home() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8 lg:py-32">
         <Reveal className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-t-[12rem] rounded-b-2xl">
-            <Image src={photos.interiorWarm.src} alt={photos.interiorWarm.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+            <Image src={photos.interiorLanterns.src} alt={photos.interiorLanterns.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
           </div>
           <div className="absolute -right-2 -bottom-8 hidden w-56 overflow-hidden rounded-2xl border-8 border-cream shadow-xl sm:block lg:-right-10">
             <Image src={photos.storefront.src} alt={photos.storefront.alt} width={photos.storefront.w} height={photos.storefront.h} sizes="224px" />
@@ -138,7 +138,7 @@ export default function Home() {
             <Reveal key={m.slug} delay={i * 150}>
               <Link href={`/menu#${m.slug}`} className="group relative isolate flex aspect-[4/3] items-end overflow-hidden rounded-3xl bg-ink p-8 sm:p-10">
                 <Image
-                  src={i === 0 ? photos.cutletsWarm.src : photos.seaBassWarm.src}
+                  src={i === 0 ? photos.kofteMeze.src : photos.efesMezes.src}
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -161,7 +161,7 @@ export default function Home() {
 
       {/* Statement */}
       <section className="relative isolate overflow-hidden bg-ink py-32 lg:py-44">
-        <Image src={photos.interiorBlue.src} alt="" fill sizes="100vw" className="-z-10 object-cover opacity-35" />
+        <Image src={photos.interiorTables.src} alt="" fill sizes="100vw" className="-z-10 object-cover opacity-35" />
         <div className="absolute inset-0 -z-10 bg-ink/55" />
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6">
           <Reveal>

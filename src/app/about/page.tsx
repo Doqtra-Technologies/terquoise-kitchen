@@ -14,12 +14,12 @@ const pillars = [
   {
     title: "Charcoal grilled",
     text: "Shish, Adana, kofte and mixed grills cooked over real charcoal for that unmistakable smoky edge.",
-    photo: photos.mixedGrill,
+    photo: photos.charcoalGrill,
   },
   {
     title: "Colourful mezes",
     text: "Houmous, babaganush, cacik, sigara borek and more - small plates designed for the middle of the table.",
-    photo: photos.mezePlates,
+    photo: photos.coldMezes,
   },
   {
     title: "House specialities",
@@ -31,7 +31,7 @@ const pillars = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="Who we are" title="About Us" image={photos.interiorBooth.src} />
+      <PageHero eyebrow="Who we are" title="About Us" image={photos.interiorSettings.src} />
 
       <section className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-24 sm:px-6 lg:grid-cols-12 lg:px-8 lg:py-32">
         <Reveal className="lg:col-span-7">
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </Reveal>
         <Reveal delay={150} className="lg:col-span-5">
           <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem]">
-            <Image src={photos.cutletsWarm.src} alt={photos.cutletsWarm.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+            <Image src={photos.copperCloche.src} alt={photos.copperCloche.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
           </div>
         </Reveal>
       </section>

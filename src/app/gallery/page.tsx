@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <PageHero eyebrow="A taste of Turquoise" title="Gallery" image={photos.interiorBlue.src} />
+      <PageHero eyebrow="A taste of Turquoise" title="Gallery" image={photos.interiorLanterns.src} />
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <GalleryGrid photos={gallery} />
         <div className="mt-16 text-center">
