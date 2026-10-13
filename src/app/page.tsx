@@ -9,10 +9,26 @@ import { setMenus } from "@/lib/menu";
 import { mapsLinkUrl, photos, site } from "@/lib/site";
 
 const signatures = [
-  { photo: photos.adana, name: "Adana", desc: "Spicy minced lamb kebab grilled over charcoal." },
-  { photo: photos.seaBass, name: "Sea Bass Fillet", desc: "Pan fried, with chunky chips and side salad." },
-  { photo: photos.lambShish, name: "Lamb Shish", desc: "Char-grilled lean, tender lamb skewers." },
-  { photo: photos.kofteChips, name: "Kofte", desc: "Minced lamb and beef kofte grilled over charcoal." },
+  {
+    photo: { src: "/images/house-moussaka.webp", alt: "Moussaka topped with béchamel and melted cheese" },
+    name: "Moussaka",
+    desc: "Layered sliced potatoes, courgettes, peppers, mushrooms, aubergines and carrots, topped with minced lamb and béchamel sauce with cheese.",
+  },
+  {
+    photo: { src: "/images/house-adana.webp", alt: "Adana kebab with bulgur and salad" },
+    name: "Adana",
+    desc: "Spicy minced lamb kebab grilled over charcoal.",
+  },
+  {
+    photo: { src: "/images/house-chicken-topkapi.webp", alt: "Chicken Topkapi stuffed with spiced rice" },
+    name: "Chicken Topkapi",
+    desc: "Large chicken thighs stuffed with rice enriched with pine nuts, currants and spices.",
+  },
+  {
+    photo: { src: "/images/house-cokertme.webp", alt: "Cokertme kebab over crispy shoestring potatoes" },
+    name: "Cokertme Kebab",
+    desc: "Marinated beef strips served over crispy shoestring potatoes with garlic yoghurt and special tomato sauce.",
+  },
 ];
 
 const instagramGrid = [
@@ -40,7 +56,7 @@ export default function Home() {
             Fire. Flavour. <span className="text-teal">Together.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/80">
-            {site.tagline} - charcoal-grilled favourites, colourful mezes and house specialities on Wood Street,
+            Mediterranean cuisine - charcoal-grilled favourites, colourful mezes and house specialities on Wood Street,
             Stratford-upon-Avon.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">

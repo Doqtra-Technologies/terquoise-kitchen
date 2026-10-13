@@ -1,6 +1,6 @@
 export const site = {
   name: "Turquoise Kitchen",
-  tagline: "Authentic Turkish - Mediterranean Cuisine",
+  tagline: "Mediterranean Cuisine",
   description:
     "Charcoal-grilled favourites, colourful mezes and house specialities in the heart of Stratford-upon-Avon.",
   url: "https://turquoisekitchen.co.uk",
