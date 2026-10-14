@@ -20,3 +20,13 @@ To use a banner video instead of the hero slideshow, add an MP4 to `public/video
 ## Pages
 
 `/` home · `/menu` · `/about` · `/gallery` · `/order` · `/contact`
+
+## Deploying to GoDaddy (cPanel Node.js)
+
+```bash
+npm run build:godaddy   # builds and writes godaddy-deploy.zip
+```
+
+1. cPanel → **Setup Node.js App** → Create: Node.js 20 or 22, mode Production, Application root e.g. `turquoise-kitchen`, Application URL your domain, startup file `server.js`.
+2. Stop the app, upload `godaddy-deploy.zip` into the Application root with File Manager, extract it (overwrite), then Restart.
+3. No `npm install` needed on the server: the zip already contains the trimmed `node_modules`.
