@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { Button, Eyebrow, PageHero } from "@/components/ui";
-import { aLaCarte, allergyNote, drinksMenu, setMenus, tagLabels, type Dish, type PricedMenu, type SetMenu, type Tag } from "@/lib/menu";
+import { aLaCarte, allergyNote, collectionMenu, drinksMenu, setMenus, tagLabels, type Dish, type PricedMenu, type SetMenu, type Tag } from "@/lib/menu";
 import { photos } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Lunch and dinner set menus, à la carte and drinks at Turquoise Kitchen: mezes, charcoal grills, chef's specials, steaks, seafood, wines and cocktails.",
+    "Lunch, dinner and collection set menus, à la carte and drinks at Turquoise Kitchen: mezes, charcoal grills, chef's specials, steaks, seafood, wines and cocktails.",
 };
 
-const menus: (SetMenu | PricedMenu)[] = [...setMenus, aLaCarte, drinksMenu];
+const menus: (SetMenu | PricedMenu)[] = [...setMenus, collectionMenu, aLaCarte, drinksMenu];
 
 const tagStyle: Record<Tag, { short: string; cls: string }> = {
   v: { short: "V", cls: "bg-emerald-600/10 text-emerald-700" },

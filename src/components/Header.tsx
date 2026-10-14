@@ -40,7 +40,7 @@ export default function Header() {
             <Logo light={overHero} />
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Main">
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -52,12 +52,12 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/order"
+            <a
+              href={site.bookingUrl}
               className="rounded-full bg-teal px-6 py-3 font-display text-sm tracking-[0.16em] text-white uppercase transition hover:bg-teal-deep"
             >
-              Order Now
-            </Link>
+              Book Now
+            </a>
           </nav>
 
           <button
@@ -94,13 +94,12 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/order"
-            onClick={() => setOpen(false)}
+          <a
+            href={site.bookingUrl}
             className="mt-8 block rounded-full bg-teal py-4 text-center font-display tracking-[0.16em] text-white uppercase"
           >
-            Order Now
-          </Link>
+            Book Now
+          </a>
           <a href={site.phone.href} className="mt-4 block text-center text-ink/70">
             Call {site.phone.display}
           </a>

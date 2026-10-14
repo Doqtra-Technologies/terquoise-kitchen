@@ -35,6 +35,8 @@ export const site = {
   // Google Business Profile "write a review" short link.
   reviewUrl: "https://g.page/r/CWH7BJJEgD7bEBM/review",
 
+  bookingUrl: "https://www.turquoisekitchen.uk/reservations",
+
   // Drop an MP4 into /public/videos and set the path here to replace the hero slideshow.
   heroVideo: null as string | null,
 };
@@ -54,6 +56,7 @@ export const nav = [
   { href: "/about", label: "About Us" },
   { href: "/gallery", label: "Gallery" },
   { href: "/order", label: "Order Online" },
+  { href: "https://www.turquoisekitchen.uk/gift-card", label: "Gift Card" },
   { href: "/contact", label: "Contact Us" },
 ];
 

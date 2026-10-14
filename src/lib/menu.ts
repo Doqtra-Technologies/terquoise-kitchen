@@ -148,7 +148,7 @@ export const setMenus: SetMenu[] = [
     slug: "dinner",
     name: "Dinner Menu",
     courses: "3 Courses",
-    price: "£25.95",
+    price: "£29.50",
     served: "Monday - Sunday · 5:00pm - 9:00pm",
     pdf: "/menus/turquoise-kitchen-dinner-menu.pdf",
     sections: [
@@ -225,6 +225,70 @@ export const setMenus: SetMenu[] = [
       "A discretionary service charge of 10% will be added to your bill, 12.5% for groups of 8 and above. All prices include VAT at the current rate. All prices are subject to change without prior notice.",
   },
 ];
+
+export const collectionMenu: SetMenu = {
+  slug: "collection",
+  name: "Collection Menu",
+  courses: "2 Courses",
+  price: "£22.95",
+  served: "Collection · Available for a limited time only",
+  pdf: "/menus/turquoise-kitchen-collection-menu.pdf",
+  sections: [
+    {
+      title: "Starters",
+      subtitle: "Please choose one",
+      note: "All starters come with Turkish flat bread.",
+      items: [
+        d("Cacik", "Grated cucumber mixed with thick yoghurt, garlic, fresh mint and dill.", ["v", "gf"]),
+        d("Houmous", "Rich chickpea purée flavoured with cumin, garlic, tahini, lemon & olive oil.", ["v", "gf"]),
+        babaganush,
+        saksuka,
+        d("Yaprak Sarma", "Vine leaves stuffed with a mixture of rice, onion and herbs, cooked in olive oil.", ["v"], { note: "Vine Leaves" }),
+        d("Beetroot Salad", "Roasted beetroots grated and mixed with yoghurt, garlic and olive oil.", ["v", "gf"]),
+        liverStarter,
+        sigara,
+        d("Muska Borek", "Triangular filo pastry filled with minced meat, onions and peppers."),
+        d("Falafel", "Chickpea and vegetable fritters served with houmous, dill, garlic and tomato sauce.", ["v"]),
+        d("Halloumi", "Pan fried halloumi cheese.", ["v"]),
+      ],
+    },
+    {
+      title: "Mains",
+      subtitle: "Please choose one",
+      items: [
+        d("Chicken Shish", "Marinated cubes of chicken grilled over charcoal, served with rice and side salad."),
+        d("Adana", "Spicy minced lamb kebab grilled over charcoal, served with rice and side salad."),
+        d(
+          "Turquoise Kofte",
+          "Spicy minced lamb and beef kofte pieces grilled on charcoal, served on a bed of garlic butter croutons with special tomato sauce, butter sauce, rice and bulgur.",
+        ),
+        d("Turquoise Chicken Cutlets", "Tender chicken thighs lightly marinated with herbs, grilled over charcoal, served with rice and side salad."),
+        d("Falafel", "Chickpea and vegetable fritters served with houmous, rice and side salad.", ["v"]),
+        d(
+          "Vegetarian Moussaka",
+          "Layers of aubergine, potato, mushrooms, courgettes, onions and tomato topped with béchamel sauce, served with rice and side salad.",
+          ["v"],
+        ),
+        d("Pan Fried Lamb Liver", "Pan fried lamb liver with red onion and parsley, served with rice and side salad."),
+        d(
+          "Beef Burger",
+          "100% beef mince (6oz), cheese, lettuce, tomato, pickle, caramelised onion and burger sauce, served with chips (ketchup & mayo).",
+        ),
+        d(
+          "Salt & Pepper Chicken",
+          "Battered chicken strips, garlic, onion, chilli, fresh peppers, sesame seeds, salt and pepper, served with rice and side salad.",
+          ["spicy"],
+        ),
+        d("Chicken Casserole", "Cubes of chicken cooked in tomato sauce with peppers, onion, mushrooms, herbs and spices, served with rice."),
+        d("Wrap Adana", "Char-grilled Adana in soft lavash with special salad and yoghurt sauce, served with chips (ketchup & mayo)."),
+        d("Wrap Chicken Shish", "Char-grilled chicken in soft lavash with special salad and yoghurt sauce, served with chips (ketchup & mayo)."),
+        d("Wrap Falafel", "Homemade falafel with houmous in soft lavash with special salad and sauce, served with chips (ketchup & mayo).", ["v"]),
+      ],
+    },
+  ],
+  serviceNote:
+    "This offer is available for a limited time only. All prices include VAT at the current rate. All prices are subject to change without prior notice.",
+};
 
 export type PricedMenu = {
   slug: string;
