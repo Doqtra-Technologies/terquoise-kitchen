@@ -56,7 +56,7 @@ export const nav = [
   { href: "/about", label: "About Us" },
   { href: "/gallery", label: "Gallery" },
   { href: "/order", label: "Order Online" },
-  { href: "https://www.turquoisekitchen.uk/gift-card", label: "Gift Card" },
+  { href: "https://book.turquoisekitchen.uk/gift-card", label: "Gift Card" },
   { href: "/contact", label: "Contact Us" },
 ];
 
