@@ -43,5 +43,3 @@ next-env.d.ts
 # source assets
 *.zip
 
-# GoDaddy deploy bundle
-/godaddy-deploy.zip

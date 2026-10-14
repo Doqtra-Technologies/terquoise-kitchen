@@ -21,14 +21,6 @@ To use a banner video instead of the hero slideshow, add an MP4 to `public/video
 
 `/` home · `/menu` · `/about` · `/gallery` · `/order` · `/contact`
 
-## Deploying to GoDaddy Node.js Hosting
+## Deploying to Vercel
 
-GoDaddy installs `dependencies` only (not `devDependencies`), then runs `npm run build` and `npm start` with `PORT` set. Anything `next build` needs (Tailwind, TypeScript, types) must stay in `dependencies`.
-
-`dev` and `build` use `--webpack`: GoDaddy's sandbox forbids the local ports Turbopack's PostCSS workers bind, which makes every page 500. Fonts are self-hosted in `src/app/fonts/` so builds need no network access.
-
-```bash
-npm run package:godaddy   # zips the last commit: source only, no node_modules/.next/.env
-```
-
-Commit first, then upload `godaddy-deploy.zip` in the GoDaddy Node.js Hosting dashboard.
+Import the repo in Vercel (framework preset: Next.js, default build settings). Every push to `main` deploys to production; other branches get preview URLs. No environment variables are needed. Fonts are self-hosted in `src/app/fonts/`.

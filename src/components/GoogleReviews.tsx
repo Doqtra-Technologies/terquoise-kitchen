@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import ReviewCarousel from "@/components/ReviewCarousel";
 import { Button, Heading } from "@/components/ui";
 import { googleRating, reviews } from "@/lib/reviews";
 import { site } from "@/lib/site";
@@ -31,29 +32,7 @@ export default function GoogleReviews() {
       </Reveal>
 
       <div className="mx-auto mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ul className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible">
-          {reviews.map((r) => (
-            <li
-              key={r.author}
-              className="flex w-[85%] shrink-0 snap-center flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:w-[45%] lg:w-auto"
-            >
-              <Stars rating={5} className="text-lg" />
-              <p className="mt-4 line-clamp-6 flex-1 leading-relaxed text-white/85">{r.text}</p>
-              <div className="mt-6 flex items-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-teal font-display text-lg uppercase"
-                >
-                  {r.author.charAt(0)}
-                </span>
-                <div className="text-sm">
-                  <p className="font-medium">{r.author}</p>
-                  <p className="text-white/50">Google review</p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <ReviewCarousel reviews={reviews} />
       </div>
 
       <div className="mt-10 flex flex-wrap justify-center gap-4 px-4">
