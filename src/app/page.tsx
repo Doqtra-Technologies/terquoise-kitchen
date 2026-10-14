@@ -9,9 +9,6 @@ import { ArrowIcon, Button, Eyebrow, FacebookIcon, Heading, InstagramIcon, Marqu
 import { setMenus } from "@/lib/menu";
 import { photos, site } from "@/lib/site";
 
-// Regenerate hourly so Google reviews stay fresh (also picks up the API key at runtime).
-export const revalidate = 3600;
-
 const signatures = [
   {
     photo: { src: "/images/house-moussaka.webp", alt: "Moussaka topped with béchamel and melted cheese" },
