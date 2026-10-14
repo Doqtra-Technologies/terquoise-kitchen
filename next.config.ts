@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // GoDaddy's preview runs `next dev` behind *.airoapp.ai; allow its HMR requests.
+  allowedDevOrigins: ["**.airoapp.ai"],
   async headers() {
     return [
       {
