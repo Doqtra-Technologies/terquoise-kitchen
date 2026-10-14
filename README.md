@@ -21,12 +21,12 @@ To use a banner video instead of the hero slideshow, add an MP4 to `public/video
 
 `/` home · `/menu` · `/about` · `/gallery` · `/order` · `/contact`
 
-## Deploying to GoDaddy (cPanel Node.js)
+## Deploying to GoDaddy Node.js Hosting
+
+GoDaddy installs `dependencies` only (not `devDependencies`), then runs `npm run build` and `npm start` with `PORT` set. Anything `next build` needs (Tailwind, TypeScript, types) must stay in `dependencies`.
 
 ```bash
-npm run build:godaddy   # builds and writes godaddy-deploy.zip
+npm run package:godaddy   # zips the last commit: source only, no node_modules/.next/.env
 ```
 
-1. cPanel → **Setup Node.js App** → Create: Node.js 20 or 22, mode Production, Application root e.g. `turquoise-kitchen`, Application URL your domain, startup file `server.js`.
-2. Stop the app, upload `godaddy-deploy.zip` into the Application root with File Manager, extract it (overwrite), then Restart.
-3. No `npm install` needed on the server: the zip already contains the trimmed `node_modules`.
+Commit first, then upload `godaddy-deploy.zip` in the GoDaddy Node.js Hosting dashboard.
