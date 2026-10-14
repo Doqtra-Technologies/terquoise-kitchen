@@ -30,12 +30,12 @@ export const site = {
       "https://www.ubereats.com/gb/store/turquoise-kitchen/9ig0mop3TlGfB3vRC39JxQ",
   },
 
-  reservationsUrl: "https://www.turquoisekitchen.uk/reservations",
+  reservationsUrl: "https://book.turquoisekitchen.uk/reservations",
 
   // Google Business Profile "write a review" short link.
   reviewUrl: "https://g.page/r/CWH7BJJEgD7bEBM/review",
 
-  bookingUrl: "https://www.turquoisekitchen.uk/reservations",
+  bookingUrl: "https://book.turquoisekitchen.uk/reservations",
 
   // Drop an MP4 into /public/videos and set the path here to replace the hero slideshow.
   heroVideo: null as string | null,
