@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost, Oswald } from "next/font/google";
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { fullAddress, site } from "@/lib/site";
 import "./globals.css";
 
-const oswald = Oswald({ variable: "--font-oswald", subsets: ["latin"] });
-const jost = Jost({ variable: "--font-jost", subsets: ["latin"] });
-const cormorant = Cormorant_Garamond({
+// Self-hosted Google Fonts (latin variable woff2) so builds need no network access.
+const oswald = localFont({ src: "./fonts/oswald.woff2", variable: "--font-oswald", weight: "200 700" });
+const jost = localFont({ src: "./fonts/jost.woff2", variable: "--font-jost", weight: "100 900" });
+const cormorant = localFont({
+  src: [
+    { path: "./fonts/cormorant-garamond.woff2", weight: "400 600", style: "normal" },
+    { path: "./fonts/cormorant-garamond-italic.woff2", weight: "400 600", style: "italic" },
+  ],
   variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
