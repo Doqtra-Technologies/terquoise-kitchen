@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import GoogleReviews from "@/components/GoogleReviews";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import Reveal from "@/components/Reveal";
 import OrderOptions from "@/components/OrderOptions";
 import VisitUs from "@/components/VisitUs";
 import { ArrowIcon, Button, Eyebrow, FacebookIcon, Heading, InstagramIcon, Marquee } from "@/components/ui";
 import { setMenus } from "@/lib/menu";
-import { mapsLinkUrl, photos, site } from "@/lib/site";
+import { photos, site } from "@/lib/site";
+
+// Regenerate hourly so Google reviews stay fresh (also picks up the API key at runtime).
+export const revalidate = 3600;
 
 const signatures = [
   {
@@ -246,26 +250,7 @@ export default function Home() {
       </section>
 
       {/* Google reviews */}
-      <section className="tile-pattern py-24 text-white lg:py-28">
-        <Reveal className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <p className="text-3xl tracking-[0.3em] text-bronze" aria-hidden="true">
-            ★★★★★
-          </p>
-          <Heading light className="mt-6">
-            Loved by our guests
-          </Heading>
-          <p className="mt-6 text-lg text-white/75">
-            Dined with us recently? We would love to hear about it. Read what others are saying or share your own
-            experience on Google.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button href={mapsLinkUrl}>Read Google reviews</Button>
-            <Button href={site.reviewUrl} variant="light">
-              Leave a review
-            </Button>
-          </div>
-        </Reveal>
-      </section>
+      <GoogleReviews />
 
       {/* Map */}
       <VisitUs />
