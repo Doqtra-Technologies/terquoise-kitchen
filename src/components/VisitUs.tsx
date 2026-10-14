@@ -41,8 +41,8 @@ export default function VisitUs() {
           </dl>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href={mapsLinkUrl}>Get directions</Button>
-            <Button href={site.phone.href} variant="outline">
-              Call to book
+            <Button href={site.reservationsUrl} variant="outline">
+              Book a table
             </Button>
           </div>
         </Reveal>

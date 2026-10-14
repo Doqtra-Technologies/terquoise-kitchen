@@ -170,7 +170,7 @@ export default function Home() {
               Made to share. <br /> Made to remember.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button href={site.phone.href}>Book a table</Button>
+              <Button href={site.reservationsUrl}>Book a table</Button>
               <Button href="/gallery" variant="light">
                 See the gallery
               </Button>

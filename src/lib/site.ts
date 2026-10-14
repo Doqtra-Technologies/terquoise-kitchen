@@ -30,6 +30,8 @@ export const site = {
       "https://www.ubereats.com/gb/store/turquoise-kitchen/9ig0mop3TlGfB3vRC39JxQ",
   },
 
+  reservationsUrl: "https://www.turquoisekitchen.uk/reservations",
+
   // Google Business Profile "write a review" short link.
   reviewUrl: "https://g.page/r/CWH7BJJEgD7bEBM/review",
 
