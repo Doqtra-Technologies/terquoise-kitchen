@@ -37,6 +37,15 @@ export const site = {
 
   bookingUrl: "https://book.turquoisekitchen.uk/reservations",
 
+  // Event poster shown as a popup on every page load; hidden once `until` passes. Set to null to disable.
+  promo: {
+    src: "/images/event-belly-dance.webp",
+    alt: "Belly Dance Night at Turquoise Kitchen, Friday 30th October at 9pm. Book now.",
+    w: 1080,
+    h: 1350,
+    until: "2026-10-31T00:00:00Z",
+  } as { src: string; alt: string; w: number; h: number; until: string } | null,
+
   // Drop an MP4 into /public/videos and set the path here to replace the hero slideshow.
   heroVideo: null as string | null,
 };

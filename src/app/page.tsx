@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import OrderOptions from "@/components/OrderOptions";
 import VisitUs from "@/components/VisitUs";
 import { ArrowIcon, Button, Eyebrow, FacebookIcon, Heading, InstagramIcon, Marquee } from "@/components/ui";
-import { setMenus } from "@/lib/menu";
+import { collectionMenu, setMenus } from "@/lib/menu";
 import { photos, site } from "@/lib/site";
 
 const signatures = [
@@ -76,6 +76,22 @@ export default function Home() {
           monoMark
         />
       </div>
+
+      {/* Collection menu deal */}
+      <section className="tile-pattern text-white">
+        <Reveal className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+          <div>
+            <p className="font-serif text-xl text-teal italic">Available for a limited time only</p>
+            <h2 className="mt-1 font-display text-4xl font-semibold uppercase sm:text-5xl">Collection Menu Deal</h2>
+            <p className="mt-2 font-display tracking-[0.16em] text-white/80 uppercase">
+              {collectionMenu.courses} for <span className="text-teal">{collectionMenu.price}</span> · Order &amp; collect
+            </p>
+          </div>
+          <Button href={`/menu#${collectionMenu.slug}`} className="shrink-0">
+            View Collection Menu <ArrowIcon />
+          </Button>
+        </Reveal>
+      </section>
 
       {/* Our story */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8 lg:py-32">
