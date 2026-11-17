@@ -41,7 +41,6 @@ const liverStarter = d("Pan Fried Lamb Liver", "Pan fried lamb liver with red on
 const houmous = d("Houmous", "Rich chickpea purée flavoured with cumin, garlic, tahini, lemon & olive oil.", ["vg", "v"]);
 const babaganush = d("Babaganush", "Grilled aubergine with tahini, yoghurt, garlic, olive oil and mixed herbs.", ["v"]);
 const saksuka = d("Saksuka", "Fried aubergine, onions and mixed peppers cooked in tomato sauce.", ["v"]);
-const beetroot = d("Beetroot Salad", "Roasted beetroot grated and mixed with yoghurt, garlic and olive oil.", ["v"]);
 const sigara = d("Sigara Borek", "Pastry filled with feta cheese, spinach & dill, served with sweet chilli sauce.", ["v"], { note: "Pastry Rolls" });
 const halloumi = d("Halloumi", "Pan fried halloumi cheese.", ["v"]);
 
@@ -73,59 +72,6 @@ const allergyNote =
 export { allergyNote };
 
 export const setMenus: SetMenu[] = [
-  {
-    slug: "lunch",
-    name: "Lunch Menu",
-    courses: "2 Courses",
-    price: "£17.50",
-    served: "Monday - Saturday · 12:00pm - 4:00pm",
-    pdf: "/menus/turquoise-kitchen-lunch-menu.pdf",
-    sections: [
-      {
-        title: "Starters",
-        subtitle: "Please choose one",
-        items: [
-          sigara,
-          soup,
-          houmous,
-          babaganush,
-          cacik,
-          liverStarter,
-          beetroot,
-          halloumi,
-          d("Garlic Mushrooms", "Pan fried sliced mushrooms with butter, double cream, garlic & herbs.", ["v"]),
-        ],
-      },
-      {
-        title: "Mains",
-        subtitle: "Please choose one",
-        items: [
-          chickenShish,
-          adana,
-          liverMain,
-          kofte,
-          seaBass,
-          spChicken,
-          d(
-            "Wrap Adana",
-            "Spicy minced lamb kebab wrapped in tortilla bread with onion, tomatoes, parsley, chilli and mint yoghurt sauce. Served with chips.",
-          ),
-          vegMoussaka,
-          spPrawn,
-        ],
-      },
-      {
-        title: "Side Orders",
-        items: [
-          d("Chunky Chips", undefined, undefined, { price: "£3.95" }),
-          d("Extra Bread", undefined, undefined, { price: "£2.50" }),
-          d("Chilli & Garlic Dip", undefined, undefined, { price: "£2.50" }),
-        ],
-      },
-    ],
-    serviceNote:
-      "A discretionary service charge of 10% will be added to your bill, 12.5% for groups of 8 and above. All prices include VAT at the current rate. All prices are subject to change without prior notice.",
-  },
   {
     slug: "dinner",
     name: "Dinner Menu",

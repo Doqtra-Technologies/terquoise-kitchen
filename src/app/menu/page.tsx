@@ -7,7 +7,7 @@ import { photos } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Lunch, dinner and collection set menus, à la carte and drinks at Turquoise Kitchen: mezes, charcoal grills, chef's specials, steaks, seafood, wines and cocktails.",
+    "Dinner and collection set menus, à la carte and drinks at Turquoise Kitchen: mezes, charcoal grills, chef's specials, steaks, seafood, wines and cocktails.",
 };
 
 const menus: (SetMenu | PricedMenu)[] = [...setMenus, collectionMenu, aLaCarte, drinksMenu];

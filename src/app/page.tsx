@@ -164,9 +164,9 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <Reveal className="text-center">
           <Eyebrow>Set menus</Eyebrow>
-          <Heading className="mt-3">Lunch &amp; dinner</Heading>
+          <Heading className="mt-3">Dinner</Heading>
         </Reveal>
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-3xl gap-8">
           {setMenus.map((m, i) => (
             <Reveal key={m.slug} delay={i * 150}>
               <Link href={`/menu#${m.slug}`} className="group relative isolate flex aspect-[4/3] items-end overflow-hidden rounded-3xl bg-ink p-8 sm:p-10">

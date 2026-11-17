@@ -47,7 +47,7 @@ const jsonLd = {
   },
   telephone: site.phone.display,
   email: site.email,
-  openingHours: ["Mo-Fr 12:00-22:00", "Sa-Su 12:00-23:00"],
+  openingHours: ["Mo-Fr 17:00-22:00", "Sa-Su 12:00-23:00"],
   sameAs: [site.socials.instagram, site.socials.facebook],
   hasMenu: `${site.url}/menu`,
   description: `${site.description} ${fullAddress}.`,

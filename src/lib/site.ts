@@ -14,7 +14,7 @@ export const site = {
   phone: { display: "01789 290933", href: "tel:+441789290933" },
 
   hours: [
-    { days: "Monday - Friday", time: "12pm - 10pm" },
+    { days: "Monday - Friday", time: "5pm - 10pm" },
     { days: "Saturday - Sunday", time: "12pm - 11pm" },
   ],
 
